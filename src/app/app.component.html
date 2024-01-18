@@ -1,0 +1,16 @@
+<main>
+  <header class="brand-name">
+    <a [routerLink]="['/']">
+      <img
+        alt="logo"
+        aria-hidden="true"
+        class="brand-logo"
+        loading="lazy"
+        src="https://random.danielpetrica.com/api/random?logo&format=small"
+      >
+    </a>
+  </header>
+  <section class="content">
+    <router-outlet></router-outlet>
+  </section>
+</main>

@@ -1,0 +1,60 @@
+<article *ngIf="photo">
+  <img
+    [src]="photo.url_regular"
+    [style]="'background-color: ' + photo.color"
+    alt="Photo of {{photo.city}}"
+    class="listing-photo"
+    loading="lazy"
+  />
+  <section class="listing-description">
+    <h2 class="listing-heading">{{photo.city}}</h2>
+    <p class="listing-location">{{photo.city}}, {{photo.country}}</p>
+  </section>
+  <section class="listing-features">
+    <h2 class="section-heading">About this photo</h2>
+    <ul>
+      <li>City : {{photo.city}}</li>
+      <li>Country: {{photo.country}}</li>
+      <li>Color: {{photo.color}}</li>
+    </ul>
+  </section>
+
+  <section class="listing-apply">
+  <h2 class="section-heading">Subscribe to updates</h2>
+  <form
+    [formGroup]="applyForm"
+    (submit)="submitApplication()"
+    autocomplete="on"
+  >
+    <label for="first-name">First Name</label>
+    <input
+      id="first-name"
+      type="text"
+      formControlName="firstName"
+      aria-autocomplete="inline"
+      autocomplete="given-name"
+      required="true"
+    >
+
+    <label for="last-name">Last Name</label>
+    <input
+      id="last-name"
+      type="text"
+      formControlName="lastName"
+      autocomplete="family-name"
+      required="true"
+    >
+
+    <label for="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      formControlName="email"
+      autocomplete="email"
+      required="true"
+    >
+    <button type="submit" class="primary">Subscribe now</button>
+  </form>
+  </section>
+</article>
+<article *ngIf="!photo"> Loading data ...</article>

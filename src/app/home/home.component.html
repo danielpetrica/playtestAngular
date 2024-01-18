@@ -1,0 +1,23 @@
+<div class="top-bar">
+  <div class="search-div">
+    <form>
+      <input
+        type="text"
+        placeholder="Search by city"
+        #search
+      >
+      <button
+        class="primary"
+        type="button"
+        (click)="filterResults(search.value)"
+        >Search</button>
+    </form>
+  </div>
+</div>
+
+<section class="results">
+  <app-photos-cell
+    *ngFor="let Photo of filteredPhotoList"
+    [Photo]="Photo"
+  ></app-photos-cell>
+</section>

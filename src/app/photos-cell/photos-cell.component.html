@@ -1,0 +1,17 @@
+<div class="listing">
+  <img
+    [src]=" Photo.url_regular"
+    alt="Photo taken in {{ Photo.city }}"
+    class="listing-photo"
+  >
+  <a
+    class="listing-heading"
+    [routerLink]="['/details', Photo.city]"
+  >
+    <span class="pin"></span>
+    Photo taken in
+    <span class="listing-location">
+      {{ Photo.city }}, {{ Photo.country}}
+    </span>
+  </a>
+</div>
